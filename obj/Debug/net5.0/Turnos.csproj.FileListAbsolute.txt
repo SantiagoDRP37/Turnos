@@ -77,3 +77,4 @@ C:\Users\TheBeast\Documents\Proyectos\Curso\Turnos\obj\Debug\net5.0\staticwebass
 C:\Users\TheBeast\Documents\Proyectos\Curso\Turnos\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.Turnos.props
 C:\Users\TheBeast\Documents\Proyectos\Curso\Turnos\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.Turnos.props
 C:\Users\TheBeast\Documents\Proyectos\Curso\Turnos\obj\Debug\net5.0\refint\Turnos.dll
+C:\Users\TheBeast\Documents\Proyectos\Curso\Turnos\obj\Debug\net5.0\Razor\Views\Especialidad\Create.cshtml.g.cs
