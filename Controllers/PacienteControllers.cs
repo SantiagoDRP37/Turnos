@@ -16,5 +16,18 @@ namespace Turnos.Controllers
         {
             return View (await _context.Paciente.ToListAsync());
         }
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id==null)
+            {
+                return NotFound();
+            }
+            var paciente = await _context.Paciente.FirstOrDefaultAsync(p => p.IdPaciente == id);
+            if(paciente == null)
+            {
+                return NotFound();
+            }
+            return View(paciente);
+        }
     }
 }
