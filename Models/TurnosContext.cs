@@ -9,6 +9,7 @@ namespace Turnos.Models
 
         }
         public DbSet<Especialidad> Especialidad {get; set;}
+        public DbSet<Paciente> Paciente {get;set;}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)  // metodo protegido, no puede ser accedido ni modificado desde otro componente. Override va sobreescribir el metodo OnModelCreating con lo que hay en el nuevo metodo
         {
@@ -19,6 +20,35 @@ namespace Turnos.Models
                 entidad.Property(e => e.Descripcion)                        //campo de tabla      
                 .IsRequired()                                               //campo es requerido (no perminte nan)
                 .HasMaxLength(200)                                          //su tamaño maximo
+                .IsUnicode(false);
+            });
+            modelBuilder.Entity<Paciente>(entidad =>
+            {
+                entidad.ToTable("Paciente");
+                entidad.HasKey(p => p.IdPaciente);
+                entidad.Property(p=> p.Nombre)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+
+                entidad.Property(p=> p.Apellido)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+
+                entidad.Property(p=> p.Direccion)
+                .IsRequired()
+                .HasMaxLength(250)
+                .IsUnicode(false);
+
+                entidad.Property(p=> p.Telefono)
+                .IsRequired()
+                .HasMaxLength(20)
+                .IsUnicode(false);
+
+                entidad.Property(p=> p.Email)
+                .IsRequired()
+                .HasMaxLength(100)
                 .IsUnicode(false);
             });
         }
