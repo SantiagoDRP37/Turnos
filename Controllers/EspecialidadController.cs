@@ -34,6 +34,7 @@ namespace Turnos.Controllers
             return View(especialidad);
         }
         [HttpPost] // Esto diferencia el metodo Edit que graba, del edit de vista
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id,[Bind("IdEspecialidad,Descripcion")] Especialidad especialidad) 
         {
             if (id != especialidad.IdEspecialidad)
@@ -65,6 +66,7 @@ namespace Turnos.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
             var especialidad = await _context.Especialidad.FindAsync(id);
@@ -80,6 +82,7 @@ namespace Turnos.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdEspecialidad, Descripcion")] Especialidad especialidad)
         {
             if(ModelState.IsValid)
