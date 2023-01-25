@@ -79,3 +79,4 @@ C:\Users\TheBeast\Documents\Proyectos\Curso\Turnos\obj\Debug\net5.0\staticwebass
 C:\Users\TheBeast\Documents\Proyectos\Curso\Turnos\obj\Debug\net5.0\refint\Turnos.dll
 C:\Users\TheBeast\Documents\Proyectos\Curso\Turnos\obj\Debug\net5.0\Razor\Views\Especialidad\Create.cshtml.g.cs
 C:\Users\TheBeast\Documents\Proyectos\Curso\Turnos\obj\Debug\net5.0\Razor\Views\Paciente\Index.cshtml.g.cs
+C:\Users\TheBeast\Documents\Proyectos\Curso\Turnos\obj\Debug\net5.0\Razor\Views\Paciente\CreatePaciente.cshtml.g.cs
