@@ -17641,6 +17641,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\TheBeast\\Documents\\Proyectos\\Curso\\Turnos\\Views\\Paciente\\DeletePaciente.cshtml",
+      "TargetPath": "Views\\Paciente\\DeletePaciente.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\TheBeast\\Documents\\Proyectos\\Curso\\Turnos\\Views\\Paciente\\Details.cshtml",
       "TargetPath": "Views\\Paciente\\Details.cshtml",
       "FileKind": "mvc"
