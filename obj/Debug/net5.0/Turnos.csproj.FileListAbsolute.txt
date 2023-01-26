@@ -81,3 +81,4 @@ C:\Users\TheBeast\Documents\Proyectos\Curso\Turnos\obj\Debug\net5.0\Razor\Views\
 C:\Users\TheBeast\Documents\Proyectos\Curso\Turnos\obj\Debug\net5.0\Razor\Views\Paciente\Index.cshtml.g.cs
 C:\Users\TheBeast\Documents\Proyectos\Curso\Turnos\obj\Debug\net5.0\Razor\Views\Paciente\CreatePaciente.cshtml.g.cs
 C:\Users\TheBeast\Documents\Proyectos\Curso\Turnos\obj\Debug\net5.0\Razor\Views\Paciente\Details.cshtml.g.cs
+C:\Users\TheBeast\Documents\Proyectos\Curso\Turnos\obj\Debug\net5.0\Razor\Views\Paciente\EditPaciente.cshtml.g.cs
