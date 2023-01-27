@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Turnos.Models;
 
 namespace Turnos.Models
 {
@@ -52,5 +53,7 @@ namespace Turnos.Models
                 .IsUnicode(false);
             });
         }
+
+        public DbSet<Turnos.Models.Medico> Medico { get; set; }
     }
 }
