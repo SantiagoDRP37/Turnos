@@ -11,6 +11,7 @@ namespace Turnos.Models
         }
         public DbSet<Especialidad> Especialidad {get; set;}
         public DbSet<Paciente> Paciente {get;set;}
+        public DbSet<Medico> Medico { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)  // metodo protegido, no puede ser accedido ni modificado desde otro componente. Override va sobreescribir el metodo OnModelCreating con lo que hay en el nuevo metodo
         {
@@ -52,8 +53,48 @@ namespace Turnos.Models
                 .HasMaxLength(100)
                 .IsUnicode(false);
             });
+            modelBuilder.Entity<Medico>(entidad =>
+                {
+                    entidad.ToTable("Medico");
+
+                    entidad.HasKey(m => m.IdMedico);
+
+                    entidad.Property(m => m.Nombre)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                    entidad.Property(m => m.Apellido)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                    entidad.Property(m => m.Direccion)
+                    .IsRequired()
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                    entidad.Property(m => m.Telefono)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                    entidad.Property(m => m.Email)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                    entidad.Property(m => m.HorarioAtencionDesde)
+                    .IsRequired()
+                    .IsUnicode(false);
+
+                    entidad.Property(m => m.HorarioAtencionHasta)
+                    .IsRequired()
+                    .IsUnicode(false);
+                }
+            );
         }
 
-        public DbSet<Turnos.Models.Medico> Medico { get; set; }
+        
     }
 }
