@@ -13,6 +13,8 @@ namespace Turnos.Models
         public DbSet<Paciente> Paciente {get;set;}
         public DbSet<Medico> Medico { get; set; }
 
+        public DbSet<MedicoEspecialidad> MedicoEspecialidad{get; set;}
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)  // metodo protegido, no puede ser accedido ni modificado desde otro componente. Override va sobreescribir el metodo OnModelCreating con lo que hay en el nuevo metodo
         {
             modelBuilder.Entity<Especialidad>(entidad =>                    //en la creacion de la tabla especificamos las propiedades que necesitamos en los campos
@@ -93,6 +95,15 @@ namespace Turnos.Models
                     .IsUnicode(false);
                 }
             );
+            modelBuilder.Entity<MedicoEspecialidad>().HasKey(x=> new{x.IdMedico, x.IdEspecialidad});
+
+            modelBuilder.Entity<MedicoEspecialidad>().HasOne(x=> x.Medico)
+            .WithMany(p => p.MedicoEspecialidad)
+            .HasForeignKey(p => p.IdMedico);
+
+            modelBuilder.Entity<MedicoEspecialidad>().HasOne(x=> x.Especialidad)
+            .WithMany(p => p.MedicoEspecialidad)
+            .HasForeignKey(p => p.IdEspecialidad);
         }
 
         
