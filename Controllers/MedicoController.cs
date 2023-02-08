@@ -45,6 +45,7 @@ namespace Turnos.Controllers
         // GET: Medico/Create
         public IActionResult Create()
         {
+            ViewData["ListaEspecialidades"] = new SelectList(_context.Especialidad,"IdEspecialidad", "Descripcion");
             return View();
         }
 
