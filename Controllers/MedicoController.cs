@@ -54,12 +54,21 @@ namespace Turnos.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdMedico,Nombre,Apellido,Direccion,Telefono,Email,HorarioAtencionDesde,HorarioAtencionHasta")] Medico medico)
+        public async Task<IActionResult> Create([Bind("IdMedico,Nombre,Apellido,Direccion,Telefono,Email,HorarioAtencionDesde,HorarioAtencionHasta")] Medico medico, int IdEspecialidad)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(medico);
                 await _context.SaveChangesAsync();
+
+                var medicoEspecialidad = new MedicoEspecialidad();
+                medicoEspecialidad.IdMedico = medico.IdMedico;
+                medicoEspecialidad.IdEspecialidad = IdEspecialidad;
+                
+                _context.Add(medicoEspecialidad);
+                await _context.SaveChangesAsync();
+
+
                 return RedirectToAction(nameof(Index));
             }
             return View(medico);
