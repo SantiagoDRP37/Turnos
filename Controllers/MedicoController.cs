@@ -82,11 +82,16 @@ namespace Turnos.Controllers
                 return NotFound();
             }
 
-            var medico = await _context.Medico.FindAsync(id);
+            var medico = await _context.Medico.Where(m => m.IdMedico == id)
+            .Include(me => me.MedicoEspecialidad).FirstOrDefaultAsync();
+
             if (medico == null)
             {
                 return NotFound();
             }
+            ViewData["ListaEspecialidades"] = new SelectList(
+                _context.Especialidad, "IdEspecialidad","Descripcion", medico.MedicoEspecialidad[0].IdEspecialidad);
+            
             return View(medico);
         }
 
