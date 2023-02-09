@@ -100,7 +100,7 @@ namespace Turnos.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdMedico,Nombre,Apellido,Direccion,Telefono,Email,HorarioAtencionDesde,HorarioAtencionHasta")] Medico medico)
+        public async Task<IActionResult> Edit(int id, [Bind("IdMedico,Nombre,Apellido,Direccion,Telefono,Email,HorarioAtencionDesde,HorarioAtencionHasta")] Medico medico, int IdEspecialidad)
         {
             if (id != medico.IdMedico)
             {
@@ -112,6 +112,17 @@ namespace Turnos.Controllers
                 try
                 {
                     _context.Update(medico);
+                     
+
+                    var medicoEspecialidad = await _context.MedicoEspecialidad
+                    .FirstOrDefaultAsync(me => me.IdMedico == id);
+
+                    _context.Remove(medicoEspecialidad);
+                    await _context.SaveChangesAsync();
+
+                    medicoEspecialidad.IdEspecialidad = IdEspecialidad;
+
+                    _context.Add(medicoEspecialidad);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
