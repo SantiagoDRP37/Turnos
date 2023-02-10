@@ -168,6 +168,13 @@ namespace Turnos.Controllers
             {
                 return Problem("Entity set 'TurnosContext.Medico'  is null.");
             }
+
+            var medicoEspecialidad = await _context.MedicoEspecialidad
+            .FirstOrDefaultAsync(me => me.IdMedico == id);
+
+            _context.MedicoEspecialidad.Remove(medicoEspecialidad);
+            await _context.SaveChangesAsync();
+
             var medico = await _context.Medico.FindAsync(id);
             if (medico != null)
             {
