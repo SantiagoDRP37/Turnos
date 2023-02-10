@@ -33,7 +33,8 @@ namespace Turnos.Controllers
             }
 
             var medico = await _context.Medico
-                .FirstOrDefaultAsync(m => m.IdMedico == id);
+                .Where(m => m.IdMedico == id).Include(me=> me.MedicoEspecialidad)
+                .ThenInclude(e => e.Especialidad).FirstOrDefaultAsync();
             if (medico == null)
             {
                 return NotFound();
