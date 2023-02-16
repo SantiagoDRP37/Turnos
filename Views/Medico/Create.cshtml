@@ -31,6 +31,7 @@
             </div>
          </div>
          <div class="input-field col s12">
+          <i class="material-icons prefix">markunread_mailbox</i>
           <input asp-for="Direccion" type="text" class="validate">
           <label asp-for="Direccion"></label>
           <span asp-validation-for="Direccion" ></span>
@@ -40,20 +41,24 @@
           <input asp-for="Telefono" type="tel" class="validate">
           <label asp-for="Telefono"></label>
           <span asp-validation-for="Telefono" ></span>
-         </div>   
-            <div >
-                <label asp-for="Email"></label>
-                <input asp-for="Email"  />
-                <span asp-validation-for="Email" ></span>
-            </div>
-            <div >
+         </div>
+         
+         <div class="input-field col s12">
+          <i class="material-icons prefix">local_post_office</i>
+          <input asp-for="Email" type="tel" class="validate">
+          <label asp-for="Email"></label>
+          <span asp-validation-for="Email" ></span>
+         </div>     
+            <div class="input-field col s12">
+                <i class="material-icons prefix">event_note</i>
                 <label asp-for="HorarioAtencionDesde"></label>
-                <input asp-for="HorarioAtencionDesde"  />
+                <input type="text" class="timepicker" asp-for="HorarioAtencionDesde"  />
                 <span asp-validation-for="HorarioAtencionDesde" ></span>
             </div>
-            <div >
+            <div class="input-field col s12">
+                <i class="material-icons prefix">event_note</i>
                 <label asp-for="HorarioAtencionHasta"></label>
-                <input asp-for="HorarioAtencionHasta"  />
+                <input type="text" class="timepicker" asp-for="HorarioAtencionHasta"  />
                 <span asp-validation-for="HorarioAtencionHasta" ></span>
             </div>
             <div >
@@ -61,7 +66,7 @@
                 <select name="IdEspecialidad"  asp-items="ViewBag.ListaEspecialidades"></select>
             </div>
             <div >
-                <input type="submit" value="Create" />
+                <input type="submit" value="Create" /> 
             </div>
         </form>
     </div>
