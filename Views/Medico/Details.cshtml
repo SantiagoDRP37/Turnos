@@ -12,62 +12,44 @@
 <body>
 
 <div>
-    <h4>Medico</h4>
+    <h5>Médico</h5>
     <hr />
-    <dl class="row">
-        <dt  >
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
-        <dd    >
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-        <dt  >
-            @Html.DisplayNameFor(model => model.Apellido)
-        </dt>
-        <dd    >
-            @Html.DisplayFor(model => model.Apellido)
-        </dd>
-        <dt  >
-            @Html.DisplayNameFor(model => model.Direccion)
-        </dt>
-        <dd    >
-            @Html.DisplayFor(model => model.Direccion)
-        </dd>
-        <dt  >
-            @Html.DisplayNameFor(model => model.Telefono)
-        </dt>
-        <dd    >
-            @Html.DisplayFor(model => model.Telefono)
-        </dd>
-        <dt  >
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd    >
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt  >
-            @Html.DisplayNameFor(model => model.HorarioAtencionDesde)
-        </dt>
-        <dd    >
-            @Html.DisplayFor(model => model.HorarioAtencionDesde)
-        </dd>
-        <dt  >
-            @Html.DisplayNameFor(model => model.HorarioAtencionHasta)
-        </dt>
-        <dd    >
-            @Html.DisplayFor(model => model.HorarioAtencionHasta)
-        </dd>
-         <dt  >
-            @Html.DisplayNameFor(model => model.MedicoEspecialidad[0].Especialidad)
-        </dt>
-        <dd    >
-            @Html.DisplayFor(model => model.MedicoEspecialidad[0].Especialidad.Descripcion)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.IdMedico">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div class="row">
+            <div class="col s12 m6">
+            <div class="card hoverable blue darken-1">
+                <div class="card-content white-text">
+                <span class="card-title"><h5><b>@Html.DisplayFor(model => model.Nombre), @Html.DisplayFor(model => model.Apellido)</b></h5></span>
+                    <dt  >
+                        <h6>@Html.DisplayNameFor(model => model.Direccion): @Html.DisplayFor(model => model.Direccion)</h6>
+                    </dt>
+                    <hr/>
+                    <dt  >
+                        <h6>@Html.DisplayNameFor(model => model.Telefono): @Html.DisplayFor(model => model.Telefono)</h6>
+                    </dt>
+                    <hr/>
+                    <dt  >
+                        <h6>@Html.DisplayNameFor(model => model.Email): @Html.DisplayFor(model => model.Email)</h6>
+                    </dt>
+                    <hr/>
+                    <dt  >
+                        <h6>@Html.DisplayNameFor(model => model.HorarioAtencionDesde): @Html.DisplayFor(model => model.HorarioAtencionDesde)</h6>
+                    </dt>
+                    <hr/>
+                    <dt >
+                        <h6>@Html.DisplayNameFor(model => model.HorarioAtencionHasta): @Html.DisplayFor(model => model.HorarioAtencionHasta)</h6>
+                    </dt>
+                </div>
+                <div class="card-action blue-grey darken-2">
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="IdMedico" />
+                        <a asp-action="Edit" asp-route-id="@Model?.IdMedico">Edit</a>
+                        <a asp-action="Index" >Volver</a>
+                    </form>
+                </div>
+            </div>
+            </div>
+        </div>
+    
+    </div>
 </body>
 </html>
