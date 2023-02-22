@@ -6,8 +6,7 @@
                 <tr>
                     <th>@Html.DisplayNameFor(model => model.Descripcion)</th>
                     <th></th>
-                </tr>
-                
+                </tr>  
             </thead>
             <tbody>
                 @*Aqui colocamos, mas adelante el codigo para mostrat los registros de la base de datos *@
@@ -17,16 +16,16 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Descripcion) 
                         </td>
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.IdEspecialidad">Editar</a>
-                            <a asp-action="Delete" asp-route-id="@item.IdEspecialidad">Eliminar</a>
+                        <td class="row">
+                            <a class="col s10 center" asp-action="Edit" asp-route-id="@item.IdEspecialidad"><i class=" material-icons">edit</i></a> 
+                            <a class="col s2 " asp-action="Delete" asp-route-id="@item.IdEspecialidad"><i class="material-icons red-text">delete</a>
                         </td>
                     </tr>    
                 }
             </tbody>
         </table>
         <p>
-    <a class="btn-floating btn-large green darken-1" asp-action="Create"><i class="material-icons">person_add</i></a>
+    <a class=" btn-floating btn-large green darken-1" asp-action="Create"><i class="material-icons">person_add</i></a>
 </p>
 </body>
         
