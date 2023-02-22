@@ -1,12 +1,13 @@
 @model IEnumerable<Turnos.Models.Especialidad>
-<p>
-    <a asp-action="Create"> Nuevo</a>
-</p>
-        <table>
-            <thead>
+<body>
+    <h1>Especialidades</h1>
+    <table class="responsive-table highlight z-depth-3 orange lighten-5">
+            <thead  class="blue darken-1 white-text">
                 <tr>
                     <th>@Html.DisplayNameFor(model => model.Descripcion)</th>
+                    <th></th>
                 </tr>
+                
             </thead>
             <tbody>
                 @*Aqui colocamos, mas adelante el codigo para mostrat los registros de la base de datos *@
@@ -24,3 +25,8 @@
                 }
             </tbody>
         </table>
+        <p>
+    <a asp-action="Create"> Nuevo</a>
+</p>
+</body>
+        
