@@ -11,6 +11,7 @@ namespace Turnos.Models
         [Required(ErrorMessage ="Debe ingresar un apellido")]
         public string Apellido{get; set;}
         [Required(ErrorMessage ="Debe ingresar una dirección")]
+        [Display(Name ="Dirección")]
         public string Direccion{get; set;}
         [Required(ErrorMessage ="Debe ingresar un telefono")]
         public string Telefono{get; set;}
